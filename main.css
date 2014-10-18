@@ -1,0 +1,113 @@
+body{
+	background-image: url("http://i326.photobucket.com/albums/k427/thomnikki/REP_08_TL0001_01_P_zpsee56dd21.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.title{
+	position: relative;
+	border: 2px solid black;
+	width: 500px;
+	height: 200px;
+	margin-left: 100px;
+	margin-top: 100px;
+	text-align: center;
+	font-family: Georgia;
+	padding: 0px;
+	line-height: .5;
+	font-size: 26px;
+	float: left;
+
+
+}
+
+.quiz{
+	position: relative;
+	border: 2px solid black;
+	width: 710px;
+	height: 340px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+	opacity: .6;
+	background-color: #fff;
+}
+
+.question-one{
+	text-align: center;
+	margin-top: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-left: 40px;
+
+}
+
+.answers-one{
+	margin-left: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-top: 90px;
+}
+
+.question-two{
+	text-align: center;
+	margin-top: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-left: 40px;
+}
+
+.answers-two{
+	margin-left: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-top: 90px;
+}
+
+.question-three{
+	text-align: center;
+	margin-top: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-left: 40px;
+}
+
+.answers-three{
+	margin-left: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-top: 90px;
+}
+
+.question-four{
+	text-align: center;
+	margin-top: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-left: 40px;
+}
+
+.answers-four{
+	margin-left: 50px;
+	visibility: hidden;
+	position: absolute;
+	margin-top: 90px;
+}
+
+.question-five{
+	text-align: center;
+	margin-top: 50px;
+	visibility: ;
+	position: absolute;
+	margin-left: 40px;
+}
+
+.answers-five{
+	margin-left: 50px;
+	visibility: ;
+	position: absolute;
+	margin-top: 90px;
+}
+
+
