@@ -6,19 +6,24 @@ var score=0;
 var questions= new Array();
 
 
-function Question(currentQuestion,answers,correct){
+function Question(currentQuestion,answers,correct,explain){
 	this.currentQuestion=currentQuestion;
 	this.answers=answers;
 	this.correct=correct;
+	this.explain=explain;
 
 }
 
 
-questions[0]=new Question("How many years do those that reach maturity live in the wild?",["80 years","100 years","60 years","70 years"],0);
-questions[1]=new Question("How long to adult green turle grow to be?",["10 ft","3 ft","5 ft","7 ft"],2);
-questions[2]=new Question("What is the weight of the largest gree sea turle?",["829 lbs","552 lbs","629 lbs","497 lbs"],0);
-questions[3]=new Question("How fast do green sea turles typically swim?",["2.0-2.3 mph","0.5-0.8 mph","3.1-3.4 mph","1.6-1.9 mph"],3);
-questions[4]=new Question("When do green sea turlte eggs typically hatch?",["In the morning","In the afternoon","During the night"],2);
+questions[0]=new Question("How many years can they live in the wild?",["80 years","100 years","60 years","70 years"],0,"They can live up to 80 years old in the wild.");
+questions[1]=new Question("How long can they grow to be?",["10 ft","3 ft","5 ft","7 ft"],2,"They grow to be 5 feet long.");
+questions[2]=new Question("What is the weight of the largest green sea turtle?",["871 lbs","552 lbs","629 lbs","497 lbs"],0, "The largest known green sea turtle weighed 871 lbs.");
+questions[3]=new Question("How fast do green sea turtles swim?",["2.0-2.3 mph","0.5-0.8 mph","3.1-3.4 mph","1.6-1.9 mph"],3,"They typically swim 1.6-1.9 mph.");
+questions[4]=new Question("When do their eggs hatch?",["In the morning","In the afternoon","During the night"],2,"The eggs hatch during the night.");
+
+function generateQuestions(){
+		$(".question").append('<h2>'+questions[currentQuestion].currentQuestion+'</h2>').hide().fadeIn('slow');
+	}
 
 
 
@@ -30,9 +35,7 @@ $(document).ready(function(e){
 	enter();
 	
 
-	function generateQuestions(){
-		$(".question").append('<h2>'+questions[currentQuestion].currentQuestion+'</h2>').hide().fadeIn('slow');
-	}
+	
 
 function generateAnswers(){
 	var answerList=questions[currentQuestion].answers;
@@ -62,7 +65,7 @@ function generateAnswers(){
 			correctNum();
 
 		}else{
-			$('.result').append('<span>'+"Incorrect"+'</span>').fadeTo('slow');
+			$('.result').append('<span>'+questions[currentQuestion].explain+'</span>').fadeTo('slow');
 
 		}
 	}	
@@ -92,11 +95,20 @@ $('.next').click(function(e){
 		$(".question").empty();
 		$(".answers").remove();
 		$('.result').remove();
-		$(".question").append('<span>You scored'+" "+score+'/5</span>').hide().fadeIn('slow');
+		var totalScore=(score/5)*100;
+		
+		$(".question").append('<span>You scored '+totalScore+"% </span>");
+					
 		
 
+				
+
+		
 	}
+		
 })
+
+
 
 $(".restart").click(function(){
 	location.reload();
